@@ -12,45 +12,71 @@
 	<!-- SCROLLS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="./css/style.css">
 
 
 	<!-- SPELLS -->
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+	<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
+	<!-- load angular -->
+	<script src="js/app.js"></script>
+	<script src="js/login/services/LoginService.js"></script>
+	<script src="js/register/services/RegisterService.js"></script>
+	<script src="js/login/controllers/LoginController.js"></script>
+	<script src="js/register/controllers/RegisterController.js"></script>
 
-	<script src="js/register/controllers/RegisterController.js"></script> <!-- load up our controller -->
-	<script src="js/register/services/RegisterService.js"></script> <!-- load our todo service -->
-	<script src="js/app.js"></script> <!-- load our main application -->
 </head>
 <!-- SET THE CONTROLLER -->
 <body ng-controller="RegisterController">
+	<!-- <div class="container">
+		<div id="loginForm" class="row">
+			<div class="col-sm-6">
+				<div class="col-md-offset-8 col-md-8">
+					<div class="jumbotron">
+						<h2>Login</h2>
+						<form>
+							<div class="form-group">
+								<input type="text" name="username" placeholder="Username" class="form-control" ng-model="formData.username">
+
+							</div>
+							<div class="form-group">
+								<input type="password" name="password" placeholder="Password" class="form-control" ng-model="formData.password">
+
+							</div>
+							<div class="form-actions">
+								<button type="submit" class="btn btn-primary btn-lg" ng-click="findUser()">Login</button>
+							</div>
+						</form>
+						<label class="font-14">Not a registered user?<a href="register.html">Register</a></label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
 	<div class="container">
 		<div id="regForm" class="row">
-			<div class="col-sm-8 col-offset-3">
-				<div class="col-md-8">
-					<div class="alert alert-success hide">{{message}}</div>
+			<div class="col-sm-6">
+				<div class="col-md-offset-8 col-md-8">
+					<div class="alert alert-success hide"></div>
 					<div class="jumbotron">
 						<h2>Register</h2>
 						<form>
 							<div class="form-group">
-								<label for="firstname">First name</label>
 								<input type="text" name="firstname" placeholder="Firstname" class="form-control" ng-model="formData.fname">
-								
+
 							</div>
 							<div class="form-group">
-								<label for="lastname">Last name</label>
 								<input type="text" name="lastname" placeholder="Lastname" class="form-control" ng-model="formData.lname">
-								
+
 							</div>
 							<div class="form-group">
-								<label for="username">Username</label>
 								<input type="text" name="username" placeholder="Username" class="form-control" ng-model="formData.username">
-								
+
 							</div>
 							<div class="form-group">
-								<label for="password">Password</label>
 								<input type="password" name="password" placeholder="Password" class="form-control" ng-model="formData.password">
-								
+
 							</div>
 							<div class="form-actions">
 								<button type="submit" class="btn btn-primary btn-lg" ng-click="saveUser()">Register</button>
@@ -61,11 +87,12 @@
 			</div>
 		</div>
 		<div class="row">
-			<!-- <div ng-repeat="user in user_list"> -->
+			<div ng-repeat="user in user_list">
 				<span>{{user_list}}</span>
-			<!-- </div> -->
+			</div>
 		</div>
-		
+
 	</div>
+
 </body>
 </html>

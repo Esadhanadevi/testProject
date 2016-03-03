@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body ng-controller="RegisterController">
+	<div class="container">
+		<div id="regForm" class="row">
+			<div class="col-sm-6">
+				<div class="col-md-offset-8 col-md-8">
+					<div class="alert alert-success hide"></div>
+					<div class="jumbotron">
+						<h2>Register</h2>
+						<form>
+							<div class="form-group">
+								<input type="text" name="firstname" placeholder="Firstname" class="form-control" ng-model="formData.fname">
+								
+							</div>
+							<div class="form-group">
+								<input type="text" name="lastname" placeholder="Lastname" class="form-control" ng-model="formData.lname">
+								
+							</div>
+							<div class="form-group">
+								<input type="text" name="username" placeholder="Username" class="form-control" ng-model="formData.username">
+								
+							</div>
+							<div class="form-group">
+								<input type="password" name="password" placeholder="Password" class="form-control" ng-model="formData.password">
+								
+							</div>
+							<div class="form-actions">
+								<button type="submit" class="btn btn-primary btn-lg" ng-click="saveUser()">Register</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div ng-repeat="user in user_list">
+				<span>{{user_list}}</span>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>
